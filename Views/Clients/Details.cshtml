@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+@model Clients
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <title>Alpha Beratung</title>
+   
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="~/assests/css/bootstrap.min.css">
+     <link rel="stylesheet" href="~/assests/css/owl.carousel.css">
+     <link rel="stylesheet" href="~/assests/css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="~/assests/css/font-awesome.min.css">
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="~/assests/css/tooplate-style.css">
+    
+
+</head>
+
+<body>
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" id="myTitle" class="navbar-brand">Alpha Beratung</a>
+               </div>
+               
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a >Hi - <span>
+                                        Username</span></a></li>
+                         <li><a asp-controller="Account" asp-action="Logout">Log Out</a></li>
+
+                    </ul>
+               </div>
+               <br />
+               <div>               <h1 style="color:white;background-color:red">@TempData["Message"]</h1></div>
+               <!-- MENU LINKS -->
+             
+
+          </div>
+                  
+         <h1 style="color:white;">Details</h1>
+     </section>
+
+
+     <!-- FEATURE -->
+     <section id="home" data-stellar-background-ratio="0.5" class="table-responsive card-datatable">
+
+
+<div>
+    <h3 style="color:white">Client @Model.Id</h3>
+    <hr />
+    <dl class="row" style="color:white" dir="ltr">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10" style="color:white;">
+            @Model.Email
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Appointment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Appointment)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sent_Time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sent_Time)
+        </dd>
+        
+     
+       
+       
+    </dl>
+    <br />
+    <div class="row">
+         <div class="col-md-3 col-sm-4">
+             <h3 style="color:white">Message</h3>
+        </div>
+   
+       <div class="col-md-3 col-sm-4">
+          <textarea cols="100" rows="6">@Model.Message</textarea>
+      </div>
+    
+    </div>
+</div>
+<div style="background-color:white">
+    <a asp-action="Details" asp-route-id="@Model?.Id" >Reply</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+           
+     </section>
+
+
+     <!-- FOOTER -->
+     
+
+
+     <!-- SCRIPTS -->
+     <script src="~/assests/js/jquery.js"></script>
+     <script src="~/assests/js/bootstrap.min.js"></script>
+     <script src="~/assests/js/jquery.stellar.min.js"></script>
+     <script src="~/assests/js/owl.carousel.min.js"></script>
+     <script src="~/assests/js/smoothscroll.js"></script>
+     <script src="~/assests/js/custom.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,380 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!-- PRE LOADER -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <title>Alpha Beratung</title>
+   
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="~/assests/css/bootstrap.min.css">
+     <link rel="stylesheet" href="~/assests/css/owl.carousel.css">
+     <link rel="stylesheet" href="~/assests/css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="~/assests/css/font-awesome.min.css">
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="~/assests/css/tooplate-style.css">
+
+</head>
+
+<body>
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" id="myTitle" class="navbar-brand">Alpha Beratung</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                         <li><a href="#home" class="smoothScroll">Home</a></li>
+                         <li><a href="#feature" class="smoothScroll">Features</a></li>
+                         <li><a href="#about" class="smoothScroll">About us</a></li>
+                         <li><a asp-controller="Home" asp-action="Contact" class="smoothScroll">Contact</a></li>
+                         <li><a asp-controller="Account" asp-action="Login" class="smoothScroll">Login</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="mailto:office@alpha-beratung.at">Say hello - <span>
+                                        office@alpha-beratung.at</span></a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- FEATURE -->
+     <section id="home" data-stellar-background-ratio="0.5">
+          <div class="container">
+                            <h1 style="color:white;background-color:green">@TempData["Message"]</h1>
+
+               <div class="row">
+
+                    <div class="col-md-offset-3 col-md-6 col-sm-12">
+                         <div class="home-info">
+
+                              <small>
+                                   <h1>"When the achievement of a goal seems impossible,do not change the goal,
+                                        but rather the approach to achieving it"</h1>
+                              </small>
+
+
+                         </div>
+                         <h2 style="color: white;"><i>Confucius</i></h2>
+                    </div>
+
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- FEATURE -->
+     <section id="feature" data-stellar-background-ratio="0.5" style="background-color: black;">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title">
+                              <h1 style="color: white;">Founded five years ago, Alfa Company has helped
+                                   many cosmetic doctors achieve the desired result by attracting a sufficient
+                                   number of clients</h1>
+                         </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="row ">
+
+
+                         <div class="col-md-4 col-sm-4">
+                              <div class="row">
+                                   <div class="col-md-3 col-sm-4">
+
+
+                                        <img src="~/assests/images/1.png" class="img-responsive" alt="Thin Laptop">
+
+
+                                   </div>
+
+                                   <div class="col-md-9 col-sm-4">
+
+                                        <h2 style="color: white;">A commitment to finding creative and
+                                             forward-thinking
+                                             solutions
+                                             for
+                                             clients
+                                             and get more patients. </h2>
+
+                                   </div>
+
+                              </div>
+                         </div>
+
+
+
+
+
+
+
+
+
+                         <div class="col-md-4 col-sm-4">
+
+                              <div class="row">
+                                   <div class="col-md-3 col-sm-4">
+
+
+                                        <img src="~/assests/images/2.png" class="img-responsive" alt="Thin Laptop">
+
+
+                                   </div>
+
+                                   <div class="col-md-9 col-sm-4">
+
+                                        <h2 style="color: white;">A dedication to delivering high-quality
+                                             services and building
+                                             strong, professional relationships with clients. </h2>
+
+                                   </div>
+
+                              </div>
+
+
+
+
+                         </div>
+
+
+
+
+
+                         <div class="col-md-4 col-sm-4">
+
+                              <div class="row">
+                                   <div class="col-md-3 col-sm-4">
+
+
+                                        <img src="~/assests/images/3.png" class="img-responsive" alt="Thin Laptop">
+
+
+                                   </div>
+
+                                   <div class="col-md-9 col-sm-4">
+
+                                        <h2 style="color: white;">A focus on understanding and meeting
+                                             the needs and goals of
+                                             clients, and delivering results that make a real difference.
+                                        </h2>
+
+                                   </div>
+
+                              </div>
+
+
+
+
+                         </div>
+
+
+                    </div>
+
+
+
+
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5" style="background-color: black;">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-offset-3 col-md-6 col-sm-12">
+                         <div class="section-title">
+                              <h1 style="color: white;">Professional Team for you</h1>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb">
+                              <img src="~/assests/images/team-image1.jpg" class="img-responsive" alt="Andrew Orange">
+                              <div class="team-info team-thumb-up">
+                                   <h2>Al-Hassan Muttaher</h2>
+                                   <small>Art Director</small>
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut
+                                        labore et dolore magna.</p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb">
+                              <h2 style="font-weight: bold;"> We specialize in providing consulting services in
+                                   electronic marketing exclusively
+                                   for
+                                   experts and cosmetic curgeons.<br /> Therefore, we
+                                   understand what you are going through and what you really need. We are capable and
+                                   prepared
+                                   to help you reach your goal, no matter what it is. Our broad experience in
+                                   electronic
+                                   marketing is
+                                   reflected in our tangible results. contacting us will not cost you anything, but it
+                                   will
+                                   benefit you
+                                   with the best information and results, even if you do not purchase our
+                                   services.</h2>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb">
+                              <img src="~/assests/images/team-image3.jpg" class="img-responsive" alt="Jack Wilson">
+                              <div class="team-info team-thumb-up">
+                                   <h2>Sameh Al-</h2>
+                                   <small>CEO / Founder</small>
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut
+                                        labore et dolore magna.</p>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- TESTIMONIAL -->
+
+
+
+     <!-- PRICING -->
+
+
+     <!-- CONTACT -->
+     <section id="contact" data-stellar-background-ratio="0.5" style="background-color: black;">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-offset-1 col-md-10 col-sm-12">
+                         <form id="contact-form" role="form" action="" method="post">
+                              <div class="section-title">
+                                   <h1 style="color: white;">Need expert guidance for your Clinic?<br />
+                                        Look no
+                                        further.
+                                   </h1>
+                              </div>
+
+
+
+                              <div class=" section-title ">
+                                   <a asp-controller="Home" asp-action="Contact" style="color: black ;">
+                                        <h3 name="send message" style="background-color:white;" id="request">
+                                             Request a
+                                             Consulation
+                                        </h3>
+                                   </a>
+                              </div>
+
+
+
+
+                         </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5" style="background-color: black;">
+          <div class="container">
+               <div class="row">
+
+                    <div class="copyright-text col-md-12 col-sm-12">
+                         <div class="row">
+                              <div class="col-md-3 col-sm-3">
+                                   <p style="color: white;">Copyright &copy; 2023 Alpha Beratung </p>
+
+                              </div>
+                              <div class="col-md-2 col-sm-1">
+
+                                   <a asp-controller="Home" asp-action="Privacy">
+                                        <p class="form-control" style="font-weight: bolder;" id="request"> Privacy
+                                             Policy </p></a>
+
+
+                              </div>
+                              <div class="col-md-2 col-sm-1">
+
+
+                                    <a asp-controller="Home" asp-action="TermsOfService" >
+                                        <p class="form-control" style="font-weight: bolder;" id="request">Terms Of
+                                             Service </p></a>
+
+
+                              </div>
+
+                              <div class="col-md-5 col-sm-6">
+                                   <ul class="social-icon">
+                                        <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"
+                                                  style="color: white;"></a></li>
+                                        <li><a href="#" class="fa fa-twitter" style="color: white;"></a></li>
+                                        <li><a href="#" class="fa fa-instagram" style="color: white;"></a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="~/assests/js/jquery.js"></script>
+     <script src="~/assests/js/bootstrap.min.js"></script>
+     <script src="~/assests/js/jquery.stellar.min.js"></script>
+     <script src="~/assests/js/owl.carousel.min.js"></script>
+     <script src="~/assests/js/smoothscroll.js"></script>
+     <script src="~/assests/js/custom.js"></script>
+
+</body>
+
+</html>

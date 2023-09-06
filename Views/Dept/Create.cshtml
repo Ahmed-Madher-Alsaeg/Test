@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+@using AlphaBeratung.Data
+@using g13lec6.Models
+@model Dept
+@inject ApplicationDbContext db;
+@{
+    var depts = db.Depts.ToList();
+}
+<h2>Craete Dept</h2>
+@if (TempData.ContainsKey("msg"))
+{
+    <div class="alert alert-info">@TempData["msg"]</div>
+}
+<form method="post" asp-action="Create" asp-Controller="Dept">
+    @*<label asp-for="Id"></label>
+   <br /> <span class="alert-danger" asp-validation-for="Id"></span>
+    <input asp-for="Id" />
+    <br />*@
+    <label asp-for="Name"></label>
+    <br /> <span class="alert-danger" asp-validation-for="Name"></span>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="Location"></label>
+    <br /> <span class="alert-danger" asp-validation-for="Location"></span>
+    <input asp-for="Location" />
+    <br /> 
+    <button class="btn btn-primary" type="submit"> Add Department</button>
+
+</form>
+
+@if (depts is not null)
+{
+    <table class="datatable-users table border">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in depts)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Location</td>
+                    <td><a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">Update</a></td>
+                    <td><a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-primary">Delete</a></td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}

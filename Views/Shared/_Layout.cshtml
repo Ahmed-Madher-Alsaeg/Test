@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <title>Alpha Beratung</title>
+   
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="~/assests/css/bootstrap.min.css">
+     <link rel="stylesheet" href="~/assests/css/owl.carousel.css">
+     <link rel="stylesheet" href="~/assests/css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="~/assests/css/font-awesome.min.css">
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="~/assests/css/tooplate-style.css">
+
+</head>
+
+<body>
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a asp-controller="Home" asp-action="Index" id="myTitle" class="navbar-brand">Alpha Beratung</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                         <li><a asp-controller="Home" asp-action="Index" class="smoothScroll">Home</a></li>
+                         <li><a asp-controller="Home" asp-action="Index" class="smoothScroll">Features</a></li>
+                         <li><a asp-controller="Home" asp-action="Index" class="smoothScroll">About us</a></li>
+                         <li><a asp-controller="Home" asp-action="Contact" class="smoothScroll">Contact</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="mailto:office@alpha-beratung.at">Say hello - <span>
+                                        office@alpha-beratung.at</span></a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+    @RenderBody() 
+
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5" style="background-color: black;">
+          <div class="container">
+               <div class="row">
+
+                    <div class="copyright-text col-md-12 col-sm-12">
+                         <div class="row">
+                              <div class="col-md-3 col-sm-3">
+                                   <p style="color: white;">Copyright &copy; 2023 Alpha Beratung </p>
+
+                              </div>
+                              <div class="col-md-2 col-sm-1">
+
+                                   <a asp-controller="Home" asp-action="Privacy">
+                                        <p class="form-control" style="font-weight: bolder;" id="request"> Privacy
+                                             Policy </p></a>
+
+
+                              </div>
+                              <div class="col-md-2 col-sm-1">
+
+
+                                   <a <a asp-controller="Home" asp-action="TermsOfService" >
+                                        <p class="form-control" style="font-weight: bolder;" id="request">Terms Of
+                                             Service </p></a>
+
+
+                              </div>
+
+                              <div class="col-md-5 col-sm-6">
+                                   <ul class="social-icon">
+                                        <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"
+                                                  style="color: white;"></a></li>
+                                        <li><a href="#" class="fa fa-twitter" style="color: white;"></a></li>
+                                        <li><a href="#" class="fa fa-instagram" style="color: white;"></a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="~/assests/js/jquery.js"></script>
+     <script src="~/assests/js/bootstrap.min.js"></script>
+     <script src="~/assests/js/jquery.stellar.min.js"></script>
+     <script src="~/assests/js/owl.carousel.min.js"></script>
+     <script src="~/assests/js/smoothscroll.js"></script>
+     <script src="~/assests/js/custom.js"></script>
+      @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

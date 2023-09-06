@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+@using g13lec6.Models
+@model List<Employee>
+<h2>Employee Table</h2>
+<a asp-controller="Employee" asp-action="Create">Add new</a>
+@if (TempData.ContainsKey("msg"))
+{
+    <div class="alert alert-info">@TempData["msg"]</div>
+}
+@if (Model is not null)
+{
+    <table class="datatable-users table border">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Dept</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.DeptId</td>
+                    <td><a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">Update</a></td>
+                    <td><a class="btn btn-primary">Delete</a></td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+@using g13lec6.Models
+@model Dept
+
+<h2>Edit Dept</h2>
+@if (TempData.ContainsKey("msg"))
+{
+    <div class="alert alert-info">@TempData["msg"]</div>
+}
+<form method="post" asp-action="Edit" asp-Controller="Dept">
+    @*<label asp-for="Id"></label>
+   <br /> <span class="alert-danger" asp-validation-for="Id"></span>
+    <input asp-for="Id" />
+    <br />*@
+    <label asp-for="Name"></label>
+    <br /> <span class="alert-danger" asp-validation-for="Name"></span>
+    <input asp-for="Name" value="@Model.Name" />
+    <br />
+    <label asp-for="Location"></label>
+    <br /> <span class="alert-danger" asp-validation-for="Location"></span>
+    <input asp-for="Location" value="@Model.Location"/>
+    <br /> 
+    <button class="btn btn-primary" type="submit"> Edit Department</button>
+
+</form>
+

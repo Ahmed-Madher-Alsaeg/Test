@@ -1,0 +1,136 @@
+﻿ @model Clients
+<!-- PRE LOADER -->
+
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+    
+
+     
+     
+     
+              
+     <!-- FEATURE -->
+     <section id="home" data-stellar-background-ratio="0.5">
+         
+          <div class="container">
+
+              
+         <h1 style="color:white;background-color:red">@TempData["Message"]</h1>
+         <div asp-validation-summary=All style="color:white;"></div>
+               <form id="contact-form" role="form" asp-action="Contact" method="post">
+                    <div class="row">
+
+                         <h1>Excellent choice!, we are going to help you. Put your info here and we will
+                              reach you soon.
+                         </h1>
+
+
+                         <div class="row">
+                              <div class="col-md-3 col-sm-4">
+                                   <h4 style="color: white;font-weight:bold;">Enter your full name </h4>
+
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+
+                                   <input type="text" class="form-control" placeholder="Full name" 
+                                       asp-for="Name" style="color: white;font-weight: bolder;" required>
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+                                   <h4 style="color: white;font-weight: bold;">Choose an appointment </h4>
+
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+                                   <input type="date" id="date"  class="flatpickr-input"
+                                      asp-for="Appointment"  style="font-weight: bolder;" required>
+
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3 col-sm-4">
+                                   <h4 style="color: white;font-weight: bold;">Enter your Email </h4>
+
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+
+                                   <input type="email" class="form-control" placeholder="Email" 
+                                      asp-for="Email"  style="color: white;font-weight: bolder;" required>
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+                                   <h4 style="color: white;font-weight: bold;">Enter your PhoneNumber </h4>
+
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+
+                                   <input type="number" class="form-control" placeholder="PhoneNumber"
+                                      asp-for="PhoneNumber"  style="color: white;font-weight: bolder;" required>
+                              </div>
+                         </div>
+
+                         <div class="row">
+                              <div class="col-md-3 col-sm-4">
+                                   <h4 style="color: white;font-weight: bold;">Enter your message </h4>
+
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+
+                                   <textarea class="form-control" rows="4" placeholder="Your message"
+                                       asp-for="Message" style="color: white;font-weight:bolder ;" required></textarea>
+                              </div>
+                         </div>
+                         <div class="row">
+                              <div class="col-md-3 col-sm-4">
+                                   <h4 style="color: white;font-weight: bold;">Agree to our <a
+                                             href="Terms of Service.html" class="agree">Terms of Service
+                                        </a> and <a href="Privacy_Policy.html" class="agree">Privacy Policy</a> ?</h4>
+
+                              </div>
+                              <div class="col-md-3 col-sm-4">
+
+                                   <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" asp-for="Agree"
+                                             id="remember-me" required />
+                                        <label class="form-check-label" asp-for="Agree"
+                                             style="color: white;">Agree</label>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="col-md-4 col-sm-4">
+                              <input type="submit" class="form-control" name="send message" value="Send Message">
+                         </div>
+                    </div>
+
+               </form>
+
+
+
+          </div>
+     </section>
+
+
+     <!-- FEATURE -->
+
+
+
+     <!-- ABOUT -->
+
+
+
+     <!-- TESTIMONIAL -->
+
+
+
+     <!-- PRICING -->
+
+
+     <!-- CONTACT -->
+
+
+     <!-- FOOTER -->

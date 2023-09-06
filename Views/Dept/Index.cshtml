@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+@using g13lec6.Models
+@model List<Dept>
+<h2>Dept Table</h2>
+<a asp-controller="Dept" asp-action="Create">Add new</a>
+@if (TempData.ContainsKey("msg"))
+{
+    <div class="alert alert-info">@TempData["msg"]</div>
+}
+@if (Model is not null)
+{
+    <table class="datatable-users table border">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Location</td>
+                    <td><a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">Update</a></td>
+                     
+                    <td>
+                        <button class="btn btn-primary" 
+                                              data-bs-toggle="modal"
+                                             data-bs-target="#addNewCCModal">
+                                             <i class="bx bx-power-off me-2"></i> 
+                                             <span class="align-middle">Delete</span>
+                                             </button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="addNewCCModal"  tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
+        <div class="modal-content p-3 p-md-5">
+            <div class="modal-body">
+
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="text-center mb-4">
+                </div>
+                <form id="addNewCCForm"  method="post" class="row g-3" >
+
+
+                    
+                    <div>
+                        <h3 for="exampleFormControlTextarea1" > هل أنت متأكد أنك تريد حذف هذا القسم..؟ </h3>
+                    </div>
+
+
+
+                    <div class="col-12 text-center mt-4">
+                        <a class="btn btn-primary me-1 me-sm-3" style="background-color:royalblue"
+                        asp-action="Delete" asp-route-Id="@item.Id"  asp-action="Logout">حذف</a>
+                        <button type="reset"
+                                class="btn btn-label-secondary btn-reset"
+                                data-bs-dismiss="modal"
+                                aria-label="Close">
+                            إلغاء
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+            }
+        </tbody>
+    </table>
+}
+
+

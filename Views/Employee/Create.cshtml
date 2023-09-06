@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+@using AlphaBeratung.Data
+@using Microsoft.EntityFrameworkCore
+@using g13lec6.Models
+@using g13lec6.Repositories
+@model Employee
+@inject ApplicationDbContext db;
+@inject IRepository<Dept> deptRepos;
+@inject IRepository<Employee> empRepos;
+@{
+    var emps = db.Employees.Include(d => d.Dept).ToList();
+    var depts = deptRepos.GetAll();
+}
+<h2>Craete Employee</h2>
+@if (TempData.ContainsKey("msg"))
+{
+    <div class="alert alert-info">@TempData["msg"]</div>
+}
+<form method="post" asp-action="Create" asp-Controller="Employee">
+    @*<label asp-for="Id"></label>
+   <br /> <span class="alert-danger" asp-validation-for="Id"></span>
+    <input asp-for="Id" />
+    <br />*@
+    <label asp-for="Name"></label>
+    <br /> <span class="alert-danger" asp-validation-for="Name"></span>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="DeptId"></label>
+    <br /> <span class="alert-danger" asp-validation-for="DeptId"></span>
+    <select asp-for="DeptId">
+        @if(depts != null)
+        {
+            foreach(var dept in depts)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        }
+    </select>
+    <br /> 
+    <button class="btn btn-primary" type="submit"> Add Employee</button>
+
+</form>
+
+@if (emps is not null)
+{
+    <table class="datatable-users table border">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Dept</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in emps)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    @if(item.Dept != null)
+                    {
+                        <td>@item.Dept.Name</td>
+                    }
+                    else
+                    {
+                        <td>---</td>
+                    }
+                    
+                    <td><a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">Update</a></td>
+                    <td><a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-primary">Delete</a></td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}

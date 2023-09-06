@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+@using AlphaBeratung.Data
+@using Microsoft.EntityFrameworkCore
+@using g13lec6.Models
+@using g13lec6.Repositories
+@model Employee
+@inject ApplicationDbContext db;
+@inject IRepository<Dept> deptRepos;
+@inject IRepository<Employee> empRepos;
+@{
+    
+    var depts = deptRepos.GetAll();
+}
+<h2>Employee Information</h2>
+@if (TempData.ContainsKey("msg"))
+{
+    <div class="alert alert-info">@TempData["msg"]</div>
+}
+<form method="post" asp-action="Edit" asp-Controller="Employee">
+    @*<label asp-for="Id"></label>
+   <br /> <span class="alert-danger" asp-validation-for="Id"></span>
+    <input asp-for="Id" />
+    <br />*@
+    <label asp-for="Name"></label>
+    <br /> <span class="alert-danger" asp-validation-for="Name"></span>
+    <input asp-for="Name" value=@Model.Name />
+    <br />
+    <label asp-for="DeptId"></label>
+    <br /> <span class="alert-danger" asp-validation-for="DeptId"></span>
+    <select asp-for="DeptId" >
+        @if(depts != null)
+        {
+            foreach(var dept in depts)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        }
+    </select>
+    <br /> 
+    <button class="btn btn-primary" type="submit"> Edit Employee's Indormation</button>
+
+</form>
+
